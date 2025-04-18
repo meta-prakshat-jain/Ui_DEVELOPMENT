@@ -1,146 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>Document</title>
 </head>
+
 <body>
-    <header>
-        <h1>MetaCube Parking System</h1>
-    </header>
 
-    <nav>
+    <div class="container">
+        <header class="main-header">
+            <!-- <h1 class="header">MetaCube Parking System</h1> -->
+            <img src="cropped-LogoMetacube_2786-1.png" alt="">
+            <nav class="space">
 
-    <table>
-        <td><th><a href="#Employee">Add Employee</a></th></td>
-        <td><th><a href="#Vehicle">Add Vehicle</a></th></td>
-        <td><th><a href="#Feedback">Give Feedback</a></th></td>
-        <td><th><a href="#Pricing">Pricing</a></th></td>
-    </table>
+                <a href="#Employee">Add Employee</a>
+                <a href="#Vehicle">Add Vehicle</a>
+                <a href="#Feedback">Give Feedback</a>
+                <a href="#Pricing">Pricing</a>
+            </nav>
+        </header>
 
-    </nav>
+        <article>
+            <div class="images">
+                <div class="img">
+                    <img src="Parking.png" alt="Image of parking" class="Parking" height="200" width="500">
+                </div>
 
-    <img src="data:image/jpeg;base64,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" alt="">
-    <section id="Employee">
-        <form>
-            <h2>ADD EMPLOYEE</h2>
-           <p>
-            <label for="fname">First Name</label>
-            <input type="text"id="fname" placeholder="first name">
-           </p> 
-          <p>
-            <label for="Gender"></label>
-            <input type="radio" name="Gender">Male
-            <input type="radio" name="Gender" >Female<br>
-          </p>
-          <p>
-            <label for="Email">Email</label>
-            <input type="text"id="Email" ><br>
-          </p>
-          <p>
-            <label for="password">Password</label>
-            <input type="password"id="password"><br>
-          </p>
-          <p>
-            <label for="conpassword">Confirm Password</label>
-            <input type="password"id="conpassword"><br>
-          </p>
-          <p>
-            <label for="Contact">Contact Number</label>
-            <input type="text"id="Contact" placeholder="+91"><br>
-          </p>
-        </form>
-        
-    </section>
+                <div class="img">
+                    <img src="Parking_2.png" alt="Image of Parking Car " height="200" width="400">
+                </div>
 
-    <section id="Vehicle">
-        <h2>Add Vehicle</h2>
-        <form>
-            <p>
-                <label for="vehicle-make">Vehicle Make (Company):</label>
-                <input type="text" id="vehicle-make" name="vehicle-make" >
-            </p>
-            <p><label for="vehicle-model">Vehicle Model:</label>
-                <input type="text" id="vehicle-model" name="vehicle-model" >
-            </p>
-            <p><label for="vehicle-type">Type:</label>
-                <input type="radio" name="vehicle-type" value="car" > Car
-                <input type="radio" name="vehicle-type" value="bike"> Bike
-            </p>
-            <p><label for="vehicle-number">Vehicle Number:</label>
-                <input type="text" id="vehicle-number" name="vehicle-number" >
-            </p>
-            <p><label for="employee-id">Employee ID:</label>
-                <input type="text" id="employee-id" name="employee-id" >
-            </p>
-            <p><label for="identification">Identification:</label>
-                <textarea id="identification" name="identification" placeholder="Describe identification (color, marks, etc.)" ></textarea>
-            </p>
-        </form>
-    </section>
-    
+                <div class="img">
+                    <img src="Parking_3.png" alt="Image of Parking Car " height="100" width="100">
+                </div>
+            </div>
+
+            <main>
+                <details class="emp-wapper">
+                    <summary>Employee</summary>
+                    <section id="Employee">
+                        <h2>ADD EMPLOYEE</h2>
+                        <div class="employee-section">
+                            <img src="employee-id-svgrepo-com.svg" alt="Add Employee Image" class="add-emp" height="200"
+                                width="300">
+                            <form class="add_employee_form">
+                                <label for="fname">First Name</label>
+                                <input type="text" id="fname" placeholder="First Name"><br>
+
+                                <span>
+                                    <label for="Gender">Gender</label>
+                                    <input type="radio" name="Gender"> Male
+                                    <input type="radio" name="Gender"> Female<br>
+                                </span>
+                                <br>
+                                <label for="Email">Email</label>
+                                <input type="text" id="Email"><br>
+
+                                <label for="password">Password</label>
+                                <input type="password" id="password"><br>
+
+                                <label for="conpassword">Confirm Password</label>
+                                <input type="password" id="conpassword"><br>
+
+                                <label for="Contact">Contact Number</label>
+                                <input type="text" id="Contact" placeholder="+91"><br>
+                            </form>
+                        </div>
+        </div>
+        </section>
+        </details>
+
+
+    <details class="emp-wapper">
+        <summary>Vehicle</summary>
+        <section id="Vehicle">
+            <h2>Add Vehicle</h2>
+            <div class="Vehicle-section">
+
+                <form class="add_vehicle_form">
+                    <label for="vehicle-make">Vehicle Make (Company):</label>
+                    <input type="text" id="vehicle-make" name="vehicle-make">
+                    <br>
+                    <label for="vehicle-model">Vehicle Model:</label>
+                    <input type="text" id="vehicle-model" name="vehicle-model">
+                    <br>
+                    <span>
+                        <label for="vehicle-type">Type:</label>
+                        <input type="radio" name="vehicle-type" value="car" re> Car
+                        <input type="radio" name="vehicle-type" value="bike"> Bike
+                    </span>
+                    <br>
+                    <label for="vehicle-number">Vehicle Number:</label>
+                    <input type="text" id="vehicle-number" name="vehicle-number">
+                    <br>
+                    <label for="employee-id">Employee ID:</label>
+                    <input type="text" id="employee-id" name="employee-id">
+                    <br>
+                    <label for="identification">Identification:</label>
+                    <textarea  id="identification" name="identification"
+                        placeholder="Describe identification (color, marks, etc.)" rows="5"></textarea>
+
+                </form>
+                <img src="Car.webp" alt="Image of an car" height="200" width="200">
+            </div>
+        </section>
+    </details>
+
+
     <section id="Feedback">
-
         <h2>Get in touch</h2>
-    <p>
-        <label for=""></label>
-        <input type="text" placeholder="User Name">
-    </p>
-    <p>
-        
-        <label for="Email_feedback"></label>
-        <input type="text"id="Email_feedback" placeholder="Email"><br>
-          
-    </p>
+        <div class="Get-Touch-section">
+            <img src="customer-128.webp" alt="Image of an mail" height="200" width="200">
 
-    <p>
-        <label for="Subject"></label>
-        <input type="text"id="Subject" placeholder="Subject" ><br>
-    </p>
+            <form class="Get-in-touch">
 
-    <p>
-        <label for="message"></label>
-        <textarea id="message" rows="10" cols="25" placeholder="message" ></textarea>
-    </p>
+                <label></label>
+                <input type="text" placeholder="User Name">
+                <br>
 
-    <p>
-        <button>Send Email</button>
-    </p>
+                <label for="Email_feedback"></label>
+                <input type="text" id="Email_feedback" placeholder="Email"><br>
+
+                <label for="Subject"></label>
+                <input type="text" id="Subject" placeholder="Subject"><br>
+
+                <label for="message"></label>
+                <textarea id="message" rows="10" cols="25" placeholder="message"></textarea>
+                <br>
+                <button>Send Email</button>
+            </form>
+        </div>
+
     </section>
 
-    <section id="Pricing">
-        <h3>Pricing</h3>
-        <table border ="1">
-            <tr>
-                <th>Cycle</th>
-                <th>Bike</th>
-                <th>Car</th>
-            </tr>
-            <tr>
-                <td>$5 Daily</td>
-                <td>$10 Daily</td>
-                <td>$20 Daily</td>
-            </tr>
-            <tr>
-                <td>$100 Monthly</td>
-                <td>$200 Monthly</td>
-                <td>$500 Monthly</td>
-            </tr>
+    <div class="Row">
+        <div class="cycle">
 
-            <tr>
-                <td>$500 Yearly </td>
-                <td>$1000 Yearly</td>
-                <td>$3500 Yearly</td>
-            </tr>
+            <h3>CYCLE</h3>
+            <div class="circle-text">
+                <h1>$100</h1>
+                <p>/month</p><br>
+            </div>
+            <div class="text"> 
+            <p>$5 Daily</p><br>
+            <p>$100 Monthly</p><br>
+            <p>$500 Yearly</p><br>
+        </div>
+            <button>Purchase Now</button>
 
-        </table>
-    </section>
+        </div>
 
-    <footer>
+        <div class="Motor">
+            <h3>MOTORCYCLE</h3>
+            <div class="circle-text">
+                <h1>$200</h1>
+                <p>/month</p><br>
+            </div>
 
-    </footer>
+            <div class="text">
+            <p>$10 Daily</p><br>
+            <p>$200 Monthly</p><br>
+            <p>$1000 Yearly</p><br>
+        </div>
+            <button>Purchase Now</button>
 
-    
+        </div>
+
+        <div class="car">
+            <h3>Four Wheelers</h3>
+            <div class="circle-text">
+                <h1>$500</h1><br>
+                <p>/month</p><br>
+            </div>
+            <div class="text">
+            <p>$20 Daily</p><br>
+            <p>$500 Monthly</p><br>
+            <p>$35000 Yearly</p><br>
+        </div>
+            <button>Purchase Now</button>
+       
+        </div>
+    </div>
+    </main>
+    </article>
+
+
+    </div>
 </body>
+
 </html>

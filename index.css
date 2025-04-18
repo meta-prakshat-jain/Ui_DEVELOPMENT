@@ -1,0 +1,239 @@
+/* Applying font styles */
+*{
+    font-family: 'Poppins',sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+} 
+
+h1, h2, h3 {
+    color: skyblue;
+}
+
+
+/* .container{
+    width: 1150px;
+    margin: 0 auto;
+} */
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 5px solid white;
+    background-color: white;
+
+    margin-bottom: 50px;
+    padding: 30px;
+    margin: 20px;
+    box-shadow: 0px 0px 10px lightpink;
+    /* position: fixed;
+    top: 0;
+    overflow: hidden; */
+}
+
+/* Adding Boxes to the nav links  */
+.space a{
+    border: 1px solid transparent;
+    box-shadow: 0 0 10px pink;
+    padding: 10px;
+    margin: 10px;
+    padding: 20px;
+    }
+
+/* Parking images comes side by side to each other */
+.images{
+    display: flex;
+    margin: 20px;
+    padding-top: 40px;
+    height: 300px;
+    border: 1 solid transparent;
+    box-shadow:  0 0 10px lightblue;
+}
+
+/*  */
+.img{
+    flex:33%;
+    padding: 5px;
+}
+
+#Employee{
+    margin: 20px;
+    box-shadow: 10px 10px lightblue;
+}
+
+#Vehicle{
+    margin: 20px;
+    box-shadow: 10px 10px lightblue;
+    
+}
+
+#Feedback{
+   
+    margin: 20px;
+    box-shadow: 10px 10px lightblue;
+    
+}
+
+h2{
+    text-align: center;
+}
+
+/* Add Employee image comes side by side  */
+.employee-section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: justify;
+    padding-bottom: 30px;
+}
+
+/*  */
+ .add_employee_form {
+    display: flex;
+    flex-direction: column; 
+    gap: 2px;
+    border: 1px solid white;
+    width: 300px;
+    box-shadow:0 0  20px gray;
+    border-radius: 25px;
+    background: skyblue;
+    padding: 20px;
+  } 
+
+  label{
+    font-weight: bold;
+    
+  } 
+
+/* Add Vehilce image comes side by side  */
+.Vehicle-section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: justify;
+    padding-bottom: 30px;
+    
+}
+
+/*  */
+.add_vehicle_form{
+    display: flex;
+    flex-direction: column; 
+    gap: 2px;
+    border: 1px solid white;
+    width: 300px;
+    box-shadow:0 0  20px gray ;
+    /* box-shadow:0 0  20px gray; */
+    border-radius: 25px;
+    background: skyblue;
+    padding: 20px;
+} 
+
+
+/* Add Vehilce image comes side by side  */
+.Get-Touch-section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: justify;
+    padding-bottom: 30px;
+    
+}
+
+/*  */
+.Get-in-touch{
+    display: flex;
+    flex-direction: column; 
+    gap: 2px;
+    border: 1px solid white;
+    width: 300px;
+    box-shadow:0 0  20px gray ;
+    border-radius: 25px;
+    background: skyblue;
+    padding: 20px;
+} 
+
+.cycle{
+    border: 0px solid transparent;
+    width: 200px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow:0 10px 10px lightblue;
+    
+}
+.Motor{
+    border: 1px solid transparent;
+    width: 200px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow:0 10px 10px lightblue;
+    
+
+}
+.car{
+    border: 1px solid transparent;
+    width: 200px;
+    text-align: center;
+   /* margin-bottom: 20px; */
+   border-radius: 25px;
+   box-shadow:0 10px 10px lightblue;
+   
+
+}
+
+.Row{
+    display: flex;
+    justify-content: space-evenly;
+}
+.circle-text{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgb(57, 57, 106);
+    border-radius: 50%;
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    
+}
+/* Designing the buttons */
+button {
+    background-color: #007BFF; /* Blue */
+    border: none;
+    color: white;
+    color: #FFFFFF;
+    border-radius: 20px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+
+.emp-wapper summary{
+    font-size: .6cm;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: lightblue;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+} 
+
+.text{
+    /* font-weight: lighter; */
+    color: gray;
+}
