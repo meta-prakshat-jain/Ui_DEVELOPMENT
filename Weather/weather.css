@@ -249,7 +249,7 @@ header h1{
 }
 /* Rotating the h1 heading */
 /* Putting h1 behing the phone image */
-.Rotate{
+/* .Rotate{
     font-size: 100px;
     position: absolute;
     padding-top: 180px;
@@ -283,7 +283,7 @@ header h1{
     transform-origin: center;
     z-index: 0;
     opacity: 0.1;
-} 
+}  */
 .phn-2{
     position: relative;
 }
@@ -307,4 +307,11 @@ header h1{
 .section-3{
     margin-top: 90px;
 }
- 
+b{
+    font-size: 40px;
+    color: rgb(114, 114, 228);
+}
+.down{
+    padding-left: 170px;
+    
+}
