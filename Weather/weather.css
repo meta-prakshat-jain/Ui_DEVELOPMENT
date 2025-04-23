@@ -315,3 +315,38 @@ b{
     padding-left: 170px;
     
 }
+.slides{
+    overflow: hidden;
+}
+.slides .img-3{
+    position: relative;
+    width: 100%;
+    margin: 50px;
+    left: -10%;
+    animation: 5s slides infinite;
+}
+.slides .img-3 img{
+    float: right;
+    width: 85%;
+
+}
+
+@keyframes slides{
+    0%{
+        left:0%;
+    }
+    30%{
+        left:0;
+    }
+    50%{
+        left:-100%;
+    }
+    80%{
+        left:-100%;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+  
