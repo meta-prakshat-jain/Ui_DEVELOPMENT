@@ -1,128 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/media.css">
+
 </head>
+
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="container">
+        <header class="main-header">
+            <!-- <h1 class="header">MetaCube Parking System</h1> -->
+            <img src="cropped-LogoMetacube_2786-1.png" alt="">
+            <nav class="space">
 
-    <!-- <div class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="p1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga rerum et mollitia nisi amet fugit quibusdam, qui fugiat a sunt incidunt nesciunt autem repellat dolor, doloremque in magni corporis totam.
+                <a href="#Employee" id="Employee-btn">Add Employee</a>
+                <a href="#Vehicle" >Add Vehicle</a>
+                <a href="#Feedback">Give Feedback</a>
+                <a href="#Pricing">Pricing</a>
+            </nav>
+        </header>
+
+        <article>
+            <div class="images">
+                <div class="img">
+                    <img src="Parking.png" alt="Image of parking" class="Parking" height="200" width="500">
+                </div>
+
+                <div class="img">
+                    <img src="Parking_2.png" alt="Image of Parking Car " height="200" width="400">
+                </div>
+
+                <div class="img">
+                    <img src="Parking_3.png" alt="Image of Parking Car " height="100" width="100">
+                </div>
+            </div>
+
+            <main>
+                <details class="emp-wapper">
+                    <summary>Employee</summary>
+                    <section id="Employee">
+                        <h2>ADD EMPLOYEE</h2>
+                        <div class="employee-section">
+                            <img src="employee-id-svgrepo-com.svg" alt="Add Employee Image" class="add-emp" height="200"
+                                width="300">
+                                <form id="add_employee_form" class="add_employee_form">
+
+                                <div class="form-step" id="step-1">
+                                    <label for="fname">First Name</label>
+                                    <input type="text" id="fname" placeholder="First Name" ><br>
+                                    <a onclick="showField('step-2','step-1')">Enter</a>
+                                </div>
+
+                                <div class="form-step" id="step-2">
+                                    <span>
+                                        <label for="Gender">Gender</label>
+                                        <input type="radio" name="Gender" > Male
+                                        <input type="radio" name="Gender" > Female<br>
+                                        <a onclick="showField('step-3','step-2')">Enter</a>
+                                    </span>
+                                </div>
+                                <br>
+                                <div class="form-step" id="step-3">
+                                    <label for="Email">Email</label>
+                                    <input type="text" id="Email" ><br>
+                                    <a onclick="showField('step-4','step-3')">Enter</a>
+                                </div>
+
+                                <div class="form-step" id="step-4">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password"><br>
+                                    <button onclick="showField('step-5','step-4')" type="submit">Enter</button>
+                                </div>
+
+                                <div class="form-step" id="step-5">
+                                    <label for="conpassword">Confirm Password</label>
+                                    <input type="password" id="conpassword"><br>
+                                    <button  onclick="showField('step-6','step-5')" type="submit">Enter</button>
+                                    <button onclick="Generate()">Generate</button>
+                                </div>
+
+                                <div class="form-step" id="step-6">
+                                    <label for="Contact">Contact Number</label>
+                                    <input type="text" id="Contact" placeholder="+91" ><br>
+                                    <button  onclick="showField('null','step-5')" >Enter</button>
+                                    
+                                </div>
+                            </form>
                         </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 col-12">
-                    <div class="p2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga rerum et mollitia nisi amet fugit quibusdam, qui fugiat a sunt incidunt nesciunt autem repellat dolor, doloremque in magni corporis totam.
                     </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 col-12">
-                    <div class="p3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga rerum et mollitia nisi amet fugit quibusdam, qui fugiat a sunt incidunt nesciunt autem repellat dolor, doloremque in magni corporis totam.
+                 </section>
+                </details>
+
+
+    <details class="emp-wapper">
+        <summary>Vehicle</summary>
+        <section id="Vehicle">
+            <h2>Add Vehicle</h2>
+            <div class="Vehicle-section">
+
+                <form class="add_vehicle_form">
+                    <div class="form-step-vehicle" id="step-v-1">
+                        <label for="vehicle-make">Vehicle Make (Company):</label>
+                        <input type="text" id="vehicle-make" name="vehicle-make">
+                        <a onclick="showField_2('step-v-2','step-v-1')">Enter</a>
                     </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 col-12">
-                    <div class="p4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga rerum et mollitia nisi amet fugit quibusdam, qui fugiat a sunt incidunt nesciunt autem repellat dolor, doloremque in magni corporis totam.
+                    <br>
+                        <div class="form-step-vehicle" id="step-v-2">
+                        <label for="vehicle-model">Vehicle Model:</label>
+                        <input type="text" id="vehicle-model" name="vehicle-model">
+                        <a onclick="showField_2('step-v-3','step-v-2')">Enter</a>
                     </div>
-                </div>
+                    <br>
+                    <div class="form-step-vehicle" id="step-v-3">
+                        <span>
+                            <label for="vehicle-type">Type:</label>
+                            <input type="radio" name="vehicle-type" value="car" re> Car
+                            <input type="radio" name="vehicle-type" value="bike"> Bike
+                        </span>
+                        <a onclick="showField_2('step-v-4','step-v-3')">Enter</a>
+                    </div>
+                    <br>
+                    <div class="form-step-vehicle" id="step-v-4">
+                        <label for="vehicle-number">Vehicle Number:</label>
+                        <input type="text" id="vehicle-number" name="vehicle-number">
+                        <a onclick="showField_2('step-v-5','step-v-4')">Enter</a>
+                    </div>
+                    <br>
+                    <div class="form-step-vehicle" id="step-v-5">
+                        <label for="employee-id">Employee ID:</label>
+                        <input type="text" id="employee-id" name="employee-id">
+                        <a onclick="showField_2('step-v-6','step-v-5')">Enter</a>
+                    </div>
+                    <br>
+                    <div class="form-step-vehicle" id="step-v-6">
+                        <label for="identification">Identification:</label>
+                        <textarea  id="identification" name="identification"
+                        placeholder="Describe identification (color, marks, etc.)" rows="5"></textarea>
+                        <a onclick="showField_2('null','step-v-6')">Enter</a>
+                    </div>
+
+                </form>
+                <img src="Car.webp" alt="Image of an car" height="200" width="200">
             </div>
-        </div>
-    </div> -->
-
-    <!-- <section class="container-fluid py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 ">
-                    <h2>Quick Facts</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="bg-white text-center py-4">
-                        <img src="images/download.png" alt="">
-                        <h3>33</h3>
-                        <p>Image</p> 
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="bg-white text-center py-4">
-                        <img src="images/download.png" alt="">
-                        <h3>33</h3>
-                        <p>Image</p> 
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="bg-white text-center py-4">
-                        <img src="images/download.png" alt="">
-                        <h3>33</h3>
-                        <p>Image</p> 
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="bg-white text-center py-4">
-                        <img src="images/download.png" alt="">
-                        <h3>33</h3>
-                        <p>Image</p> 
-
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="bg-white text-center py-4">
-                        <img src="images/download.png" alt="">
-                        <h3>33</h3>
-                        <p>Image</p> 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
+        </section>
+    </details>
 
 
-    <!-- Gutter Classes -->
-     <!-- <div class="container-fluid">
-        <div class="container">
-            <div class="row g-3">
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="first-name">
-                </div>
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="last-name">
-                </div>
-            </div>
-        </div>
-    </div> -->
+    <section id="Feedback">
+        <h2>Get in touch</h2>
+        <div class="Get-Touch-section">
+            <img src="customer-128.webp" alt="Image of an mail" height="200" width="200">
 
-    <!-- Gutter Classes Example 2 -->
-     <div class="container-fluid">
-        <div class="container">
-            
-            <form class="row g-3"> 
-                <div class="col-lg-6">
-                    <label for="inputEmail4" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4">
-                </div>
-                <div class="col-lg-6">
-                    <label class="form-label">Password</label>
-                     <input type="password" class="form-control" id="inputPassword4">
-                </div>
-            
-                <div class="col-12">
-                    <label for="inputAddress" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                </div>
+            <form class="Get-in-touch">
 
-                <div class="col-12">
-                    <label for="inputAddress2" class="form-label">Address2</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment,studio.">
-                </div>
+                <label></label>
+                <input type="text" placeholder="User Name">
+                <br>
+
+                <label for="Email_feedback"></label>
+                <input type="text" id="Email_feedback" placeholder="Email"><br>
+
+                <label for="Subject"></label>
+                <input type="text" id="Subject" placeholder="Subject"><br>
+
+                <label for="message"></label>
+                <textarea id="message" rows="10" cols="25" placeholder="message"></textarea>
+                <br>
+                <button>Send Email</button>
             </form>
+        </div>
+
+    </section>
+
+    <div class="Row">
+        <div class="cycle">
+
+            <h3>CYCLE</h3>
+            <div class="circle-text">
+                <h1>$100</h1>
+                <p>/month</p><br>
+            </div>
+            <div class="text"> 
+            <p>$5 Daily</p><br>
+            <p>$100 Monthly</p><br>
+            <p>$500 Yearly</p><br>
+        </div>
+            <button>Purchase Now</button>
 
         </div>
-     </div>
+
+        <div class="Motor">
+            <h3>MOTORCYCLE</h3>
+            <div class="circle-text">
+                <h1>$200</h1>
+                <p>/month</p><br>
+            </div>
+
+            <div class="text">
+            <p>$10 Daily</p><br>
+            <p>$200 Monthly</p><br>
+            <p>$1000 Yearly</p><br>
+        </div>
+            <button>Purchase Now</button>
+
+        </div>
+
+        <div class="car">
+            <h3>Four Wheelers</h3>
+            <div class="circle-text">
+                <h1>$500</h1><br>
+                <p>/month</p><br>
+            </div>
+            <div class="text">
+            <p>$20 Daily</p><br>
+            <p>$500 Monthly</p><br>
+            <p>$35000 Yearly</p><br>
+        </div>
+            <button>Purchase Now</button>
+       
+        </div>
+    </div>
+    </main>
+    </article>
+
+
+    </div>
+    
 </body>
+
 </html>
