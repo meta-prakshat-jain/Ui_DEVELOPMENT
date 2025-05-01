@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
     <title>Document</title>
+
 </head>
 
 <body>
@@ -15,8 +17,8 @@
             <img src="cropped-LogoMetacube_2786-1.png" alt="">
             <nav class="space">
 
-                <a href="#Employee">Add Employee</a>
-                <a href="#Vehicle">Add Vehicle</a>
+                <a onclick="showHideUser()" href="#Employee" id="Employee-btn">Add Employee</a>
+                <a href="#Vehicle" >Add Vehicle</a>
                 <a href="#Feedback">Give Feedback</a>
                 <a href="#Pricing">Pricing</a>
             </nav>
@@ -45,32 +47,66 @@
                         <div class="employee-section">
                             <img src="employee-id-svgrepo-com.svg" alt="Add Employee Image" class="add-emp" height="200"
                                 width="300">
-                            <form class="add_employee_form">
-                                <label for="fname">First Name</label>
-                                <input type="text" id="fname" placeholder="First Name"><br>
+                                <h2 id="employee-id-display" style="color: green;"></h2>
 
+                            <form class="add_employee_form">
+                                <div id="step-1" class="form-step">
+                                    <label for="fname">First Name</label>
+                                    <input
+                                        type="text"
+                                        id="fname"
+                                        placeholder="First Name"
+                                        oninput="checkValidationName()"
+                                    ><br>
+                                    <span id="name-error" style="color: red; font-size: 14px;"></span><br>
+                                    <a class="next-btn" onclick="moveToNext('step-2','step-1')">Next</a>
+                                </div>
+                                <br>
+                                <div id="step-2" class="form-step">
                                 <span>
                                     <label for="Gender">Gender</label>
                                     <input type="radio" name="Gender"> Male
                                     <input type="radio" name="Gender"> Female<br>
                                 </span>
+                                <a class="next-btn" onclick="moveToNext('step-3','step-2')">Next</a>
+                                </div>
+
+                                <div id="step-3" class="form-step">
+                                    <label for="Email">Email</label>
+                                    <input type="text" id="Email" oninput="checkEmail()"><br>
+                                    <span id="email-error" style="color: red; font-size: 14px;"></span><br>
+                                    <a onclick="moveToNext('step-4','step-3')">Next</a>
+                                </div>
+
                                 <br>
-                                <label for="Email">Email</label>
-                                <input type="text" id="Email"><br>
+                                <!-- STEP 4 - PASSWORD -->
+                                <div id="step-4" class="form-step" style="display: none;">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" oninput="checkPassword()"><br>
+                                    <span id="password-error" style="color: red; font-size: 14px;"></span><br>
+                                    <a onclick="moveToNext('step-5','step-4')">Next</a>
+                                </div>
+                                <!-- STEP 5 - CONFIRM PASSWORD -->
+                                <div id="step-5" class="form-step" style="display: none;">
+                                    <label for="conpassword">Confirm Password</label>
+                                    <input type="password" id="conpassword" oninput="checkConfirmPassword()"><br>
+                                    <span id="conpassword-error" style="color: red; font-size: 14px;"></span><br>
+                                    <a onclick="moveToNext('step-6','step-5')">Next</a>
+                                </div>
+                                <br>
+                                <!-- STEP 6 - CONTACT -->
+                                <div id="step-6" class="form-step" style="display: none;">
+                                    <label for="Contact">Contact Number</label>
+                                    <input type="text" id="Contact" placeholder="+91" oninput="checkContact()"><br>
+                                    <span id="contact-error" style="color: red; font-size: 14px;"></span><br>
+                                    <button type="button" onclick="handleSubmit()">Submit</button>
 
-                                <label for="password">Password</label>
-                                <input type="password" id="password"><br>
-
-                                <label for="conpassword">Confirm Password</label>
-                                <input type="password" id="conpassword"><br>
-
-                                <label for="Contact">Contact Number</label>
-                                <input type="text" id="Contact" placeholder="+91"><br>
+                                </div>
                             </form>
                         </div>
-        </div>
-        </section>
-        </details>
+                    </div>
+                 </section>
+                </details>
 
 
     <details class="emp-wapper">
@@ -80,27 +116,61 @@
             <div class="Vehicle-section">
 
                 <form class="add_vehicle_form">
-                    <label for="vehicle-make">Vehicle Make (Company):</label>
-                    <input type="text" id="vehicle-make" name="vehicle-make">
+                    <div id="step-v-1" class="form-vehicle">
+                            <label for="vehicle-make">Vehicle Make (Company):</label>
+                            <input type="text" id="vehicle-make" name="vehicle-make">
+                            <a onclick="moveToNext('step-v-2','step-v-1')">Next</a>
+                    </div>
                     <br>
-                    <label for="vehicle-model">Vehicle Model:</label>
-                    <input type="text" id="vehicle-model" name="vehicle-model">
+                    <div id="step-v-2" class="form-vehicle">
+                        <label for="vehicle-model">Vehicle Model:</label>
+                        <input type="text" id="vehicle-model" name="vehicle-model">
+                        <a onclick="moveToNext('step-v-3','step-v-2')">Next</a>
+                    </div>
                     <br>
-                    <span>
-                        <label for="vehicle-type">Type:</label>
-                        <input type="radio" name="vehicle-type" value="car" re> Car
-                        <input type="radio" name="vehicle-type" value="bike"> Bike
-                    </span>
+                    <div id="step-v-3" class="form-vehicle">
+                        <h3>Select Vehicle Type</h3>
+                        <label><input type="radio" name="vehicle-type" value="Cycle"> Cycle</label>
+                        <label><input type="radio" name="vehicle-type" value="Motorcycle"> Motorcycle</label>
+                        <label><input type="radio" name="vehicle-type" value="Four Wheeler"> Four Wheeler</label>
+
+                        <h3>Select Plan</h3>
+                        <label><input type="radio" name="plan-type" value="Daily"> Daily</label>
+                        <label><input type="radio" name="plan-type" value="Monthly"> Monthly</label>
+                        <label><input type="radio" name="plan-type" value="Yearly"> Yearly</label>
+
+                        <h3>Select Currency</h3>
+                        <select id="currency-select">
+                            <option value="INR">INR</option>
+                            <option value="USD">USD</option>
+                            <option value="YEN">YEN</option>
+                        </select>
+
+                        <br><br>
+                        <a onclick="calculateAndShowPass()">Get Pass</a>
+
+                        <div id="final-pass" style="margin-top: 20px; font-size: 16px; font-weight: bold;"></div>
+                    </div>
+
                     <br>
-                    <label for="vehicle-number">Vehicle Number:</label>
-                    <input type="text" id="vehicle-number" name="vehicle-number">
+                    <div id="step-v-4" class="form-vehicle">
+                        <label for="vehicle-number">Vehicle Number:</label>
+                        <input type="text" id="vehicle-number" name="vehicle-number">
+                        <a onclick="moveToNext('step-v-5','step-v-4')">Next</a>
+                    </div>
                     <br>
-                    <label for="employee-id">Employee ID:</label>
-                    <input type="text" id="employee-id" name="employee-id">
+                    <div id="step-v-5" class="form-vehicle">
+                        <label for="employee-id">Employee ID:</label>
+                        <input type="text" id="employee-id" name="employee-id">
+                        <a onclick="moveToNext('step-v-6','step-v-5')">Next</a>
+                    </div>
                     <br>
-                    <label for="identification">Identification:</label>
-                    <textarea  id="identification" name="identification"
-                        placeholder="Describe identification (color, marks, etc.)" rows="5"></textarea>
+                    <div id="step-v-6" class="form-vehicle">
+                        <label for="identification">Identification:</label>
+                        <textarea  id="identification" name="identification"
+                            placeholder="Describe identification (color, marks, etc.)" rows="5"></textarea>
+                            <button>Get Pass</button>
+                    </div>
 
                 </form>
                 <img src="Car.webp" alt="Image of an car" height="200" width="200">
@@ -188,6 +258,7 @@
 
 
     </div>
+    
 </body>
 
 </html>
